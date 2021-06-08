@@ -6,6 +6,10 @@ import axios from 'axios';
 function Ditto() {
     const [pokemon, setPokemon] = useState(null);
 
+    useEffect(() => {
+        console.log('fetching on mount')
+    }, [])
+
     async function fetchData() {
         try {
             const result = await axios.get('https://pokeapi.co/api/v2/pokemon/ditto')
