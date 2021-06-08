@@ -8,24 +8,23 @@ function Ditto() {
 
     useEffect(() => {
         console.log('fetching on mount')
+        async function fetchData() {
+            try {
+                const response = await axios.get('https://pokeapi.co/api/v2/pokemon/ditto')
+                console.log(response.data)
+            } catch (e) {
+                console.error(e)
+            }
+        }
+        fetchData()
     }, [])
 
-    async function fetchData() {
-        try {
-            const result = await axios.get('https://pokeapi.co/api/v2/pokemon/ditto')
-            console.log(result.data)
-        } catch (e) {
-            console.error(e)
-        }
 
 
-
-    }
-fetchData()
 
     return (
         <div>
-            <button onClick={fetchData}>FetchPokemon</button>
+
             <div>
                 <p>Hier komt Pokemon
 
