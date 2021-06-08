@@ -4,22 +4,29 @@ import axios from 'axios';
 
 
 function Ditto() {
-    useEffect(() => {
-        async function fetchData() {
-            try{
-                const result = await axios.get('https://pokeapi.co/api/v2/pokemon/ditto')
-                console.log(result.data)
-            } catch(e) {
-                console.error(e)
-            }
+    async function fetchData() {
+        try {
+            const result = await axios.get('https://pokeapi.co/api/v2/pokemon/ditto')
+            console.log(result.data)
+        } catch (e) {
+            console.error(e)
         }
-    }, [])
 
-    const [fetchPokemon, setFetchPokemon] = useState()
+
+
+    }
+
+
+fetchData()
 
     return (
         <div>
+            <button onClick={fetchData}>FetchPokemon</button>
+            <div>
+                <p>Hier komt Pokemon
 
+                </p>
+            </div>
 
         </div>
     );
